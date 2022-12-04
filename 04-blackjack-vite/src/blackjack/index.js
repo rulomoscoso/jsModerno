@@ -1,5 +1,9 @@
 import _ from 'underscore';
-import { crearDeck } from './usecases/crear-deck'
+// import { crearDeck as crearNuevoDeck } from './usecases/crear-deck';
+// import cualquierNombreParaCrearUnNuevoDeck from './usecases/crear-deck';
+// import crearDeck, { miNombre } from './usecases/crear-deck';
+import { crearDeck } from './usecases/crear-deck';
+
 /**
  * 2C = Two of Clubs
  * 2D = Two of Diamonds
@@ -24,7 +28,7 @@ import { crearDeck } from './usecases/crear-deck'
  
  const puntosHTML = document.querySelectorAll('small');
  
- crearDeck();
+ deck = crearDeck(tipos, especiales);
  
  
  // Esta función me permite tomar una carta

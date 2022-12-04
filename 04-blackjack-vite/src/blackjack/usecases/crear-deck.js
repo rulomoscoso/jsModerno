@@ -1,7 +1,9 @@
  import _ from 'underscore';
- // Esta función crea un nuevo deck
+
+ export const miNombre = 'Raul';
+
  export const crearDeck = (tiposDeCarta, tiposEspeciales) => {
- 
+    let deck = [];
     for( let i = 2; i <= 10; i++ ) {
         for( let tipo of tiposDeCarta ) {
             deck.push( i + tipo);
@@ -17,3 +19,5 @@
     deck = _.shuffle( deck );
     return deck;
 }
+
+// export default crearDeck;
