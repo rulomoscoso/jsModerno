@@ -6,7 +6,7 @@ import _ from 'underscore';
 // import { pedirCarta } from './usecases/pedir-carta';
 // import { valorCarta } from "./usecases/valor-carta";
 
-import { crearDeck, pedirCarta, valorCarta, turnoComputadora } from "./usecases";
+import { crearDeck, pedirCarta, valorCarta, turnoComputadora, crearCartaHtml } from "./usecases";
 
 /**
  * 2C = Two of Clubs
@@ -33,14 +33,7 @@ import { crearDeck, pedirCarta, valorCarta, turnoComputadora } from "./usecases"
  const puntosHTML = document.querySelectorAll('small');
  
  deck = crearDeck(tipos, especiales);
- 
- 
 
- 
-
- 
- 
- 
  // Eventos
  btnPedir.addEventListener('click', () => {
  
@@ -50,9 +43,7 @@ import { crearDeck, pedirCarta, valorCarta, turnoComputadora } from "./usecases"
      puntosHTML[0].innerText = puntosJugador;
      
      // <img class="carta" src="assets/cartas/2C.png">
-     const imgCarta = document.createElement('img');
-     imgCarta.src = `assets/cartas/${ carta }.png`; //3H, JD
-     imgCarta.classList.add('carta');
+     const imgCarta = crearCartaHtml( carta );
      divCartasJugador.append( imgCarta );
  
      if ( puntosJugador > 21 ) {
