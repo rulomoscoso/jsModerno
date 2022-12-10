@@ -26,13 +26,13 @@ const loadStore = () => {
     throw new Error('Not implemented');
 }
 
-const getTodos = ( filter = filter.All ) => {
+const getTodos = ( filter = filters.All ) => {
     switch( filter ) {
-        case filter.All:
+        case filters.All:
             return [...state.todos];
-        case filter.Completed:
+        case filters.Completed:
             return state.todos.filter( todo => todo.done );
-        case filter.Pending:
+        case filters.Pending:
             return state.todos.filter( todo => !todo.done );
         default:
             throw new Error(`Option ${ filter } is not valid.`);
